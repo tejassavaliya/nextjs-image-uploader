@@ -8,10 +8,7 @@ function Nav() {
                     <a>Home</a>
                 </Link>
                 <Link href="/ImageDragDrop">
-                    <a>Drag Drop</a>
-                </Link>
-                <Link href="/Upload">
-                    <a>Upload</a>
+                    <a>DragDrop</a>
                 </Link>
             </li>
         </ul>
