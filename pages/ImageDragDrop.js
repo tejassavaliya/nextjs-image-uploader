@@ -135,9 +135,6 @@ const ImageDragDrop = () => {
         uploadModalRef.current.style.display = 'block';
         uploadRef.current.innerHTML = 'File(s) Uploading...';
         for (let i = 0; i < validFiles.length; i++) {
-            // const formData = new FormData();
-            // formData.append('image', validFiles[i]);
-            // formData.append('key', '');
             const fd = new FormData();
             fd.append('file', validFiles[i], validFiles[i].name);
             fd.append('expires', '1m');
@@ -148,7 +145,7 @@ const ImageDragDrop = () => {
                     progressRef.current.style.width = `${uploadPercentage}%`;
 
                     if (uploadPercentage === 100) {
-                        uploadRef.current.innerHTML = 'File Uploaded';
+                        uploadRef.current.innerHTML = 'File(s) Uploaded';
                         validFiles.length = 0;
                         setValidFiles([...validFiles]);
                         setSelectedFiles([...validFiles]);
@@ -176,6 +173,7 @@ const ImageDragDrop = () => {
 
     const closeUploadModal = () => {
         uploadModalRef.current.style.display = 'none';
+        setUploadedImageUrl([]);
     }
     const copyUrlHandler = (imageUrl) => {
         console.log("copy url", imageUrl)
